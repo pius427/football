@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Information Form</title>
+  <style>
+     body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>User Information Form</h1>
+  <form id="userForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age" required><br><br>
+    <label for="footballclub">footballclub:</label><br>
+    <input type="footballclub" id="footballclub" name="footballclub" required><br><br>
+    <button type="button" onclick="collectUserInfo()">Submit</button>
+   
+  </form>
+
+  <div id="output"></div>
+
+  <script>
+    function collectUserInfo() {
+      // Get user input values
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const footballclub = document.getElementById('footballclub').value;
+    
+
+      // Validate input (example)
+      if (name && age && footballclub) {
+        // Display a custom message
+        const output = document.getElementById('output');
+        output.innerHTML = `Hello, ${name}!. ${footballclub}.fan huh, THANK YOU`;
+      } else
+       {
+        alert('Please fill out all fields before submitting.');
+      }
+    }
+  </script>
+</body>
+</html>
